@@ -116,6 +116,11 @@
       "check-separator",
       "check-type"
     ],
+    "extends": [
+      "tslint:recommended", 
+      "tslint-plugin-prettier", 
+      "tslint-config-prettier"
+    ],
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
