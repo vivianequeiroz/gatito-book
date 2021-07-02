@@ -10,6 +10,13 @@ const routes: Routes = [
       return modulo.HomeModule;
     },
   },
+  {
+    path: "animais",
+    loadChildren: async () => {
+      const modulo = await import("./animais/animais.module");
+      return modulo.AnimaisModule;
+    },
+  },
 ];
 
 @NgModule({
