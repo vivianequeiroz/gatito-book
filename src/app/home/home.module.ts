@@ -7,8 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, HomeRoutingModule],
-  declarations: [HomeComponent, LoginComponent, FormsModule],
+  imports: [CommonModule, HomeRoutingModule, FormsModule],
+  declarations: [HomeComponent, LoginComponent],
   exports: [HomeComponent],
 })
 export class HomeModule {}
