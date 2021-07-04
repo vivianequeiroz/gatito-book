@@ -46,6 +46,13 @@
     "
     mensagem="Usuários apenas com letra minúscula"
   ></app-mensagem>
+  <app-mensagem
+  *ngIf="
+    novoUsuarioForm.get('userName')?.errors?.usuarioExistente &&
+    novoUsuarioForm.get('userName')?.touched
+  "
+  mensagem="Usuário já existe."
+></app-mensagem>
   <div class="form-group">
     <input
       type="password"
