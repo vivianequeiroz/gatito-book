@@ -6,7 +6,7 @@ const KEY = "token";
   providedIn: "root",
 })
 export class TokenService {
-  returnToken() {
+  retornaToken() {
     return ((localStorage.getItem(KEY))) ?? "";
   }
 
@@ -19,6 +19,6 @@ export class TokenService {
   }
 
   possuiToken() {
-    return !!((this.returnToken));
+    return !!((this.retornaToken));
   }
 }
