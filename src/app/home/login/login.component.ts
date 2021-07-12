@@ -1,41 +1,32 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { AutenticacaoService } from "src/app/autenticacao/autenticacao.service";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AutenticacaoService } from 'src/app/autenticacao/autenticacao.service';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  usuario = "";
-  senha = "";
+  usuario = '';
+  senha = '';
 
   constructor(
     private authService: AutenticacaoService,
     private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   login() {
     this.authService.autenticar(this.usuario, this.senha).subscribe(
       () => {
-        this.router.navigate(["animais"]);
+        this.router.navigate(['animais']);
       },
       (error) => {
-        alert("Usuario ou senha inválido.");
+        alert('Usuário ou senha inválido');
+        console.log(error);
       }
     );
-  }
-
-  imprimirPagina(idBotao: string) {
-    const contentToPrint = document.getElementById("impressao")
-    const windowFormat = window.open('', '', 'left=0,top=0,width=900,height=900,toolbar=0,scrollbars=0,status=0');
-    windowFormat.document.write(contentToPrint.innerHTML);
-    windowFormat.document.close();
-    windowFormat.focus();
-    windowFormat.print();
-    windowFormat.close();
   }
 }

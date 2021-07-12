@@ -6,11 +6,12 @@ import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
 import { AnimalComponent } from './animal/animal.component';
 import { GradeFotosAnimaisComponent } from './grade-fotos-animais/grade-fotos-animais.component';
 
+
 @NgModule({
+  declarations: [ListaAnimaisComponent, AnimalComponent, GradeFotosAnimaisComponent],
   imports: [
     CommonModule,
     AnimaisRoutingModule
-  ],
-  declarations: [ListaAnimaisComponent, AnimalComponent, GradeFotosAnimaisComponent]
+  ]
 })
 export class AnimaisModule { }

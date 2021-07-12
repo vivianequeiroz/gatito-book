@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
-import { TokenService } from "../token.service";
-import { Usuario } from "./usuario";
-import jwt_decode from "jwt-decode";
-import { BehaviorSubject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { TokenService } from '../token.service';
+import { Usuario } from './usuario';
+import jwt_decode from 'jwt-decode';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class UsuarioService {
   private usuarioSubject = new BehaviorSubject<Usuario>({});

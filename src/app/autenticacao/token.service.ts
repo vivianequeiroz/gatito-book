@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-const KEY = "token";
+const KEY = 'token';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class TokenService {
   retornaToken() {
-    return ((localStorage.getItem(KEY))) ?? "";
+    return localStorage.getItem(KEY) ?? '';
   }
 
   salvaToken(token: string) {
@@ -19,6 +19,7 @@ export class TokenService {
   }
 
   possuiToken() {
-    return !!((this.retornaToken));
+    return !!this.retornaToken();
   }
+  
 }
