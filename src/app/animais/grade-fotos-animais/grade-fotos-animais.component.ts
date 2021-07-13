@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
+import { Animais } from "../animais";
 
 @Component({
-  selector: 'app-grade-fotos-animais',
-  templateUrl: './grade-fotos-animais.component.html',
-  styleUrls: ['./grade-fotos-animais.component.css']
+  selector: "app-grade-fotos-animais",
+  templateUrl: "./grade-fotos-animais.component.html",
+  styleUrls: ["./grade-fotos-animais.component.css"],
 })
 export class GradeFotosAnimaisComponent implements OnInit {
+  @Input() animais!: Animais;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
