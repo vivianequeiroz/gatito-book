@@ -26,3 +26,5 @@ export class AutenticacaoInterceptor implements HttpInterceptor {
     return next.handle(request);
   }
 }
+
+// interceptor must have independent order of execution because the order it will be called can not be guaranteed
