@@ -1,3 +1,4 @@
+import { AnimaisModule } from "./animais/animais.module";
 import { AutenticacaoModule } from "./autenticacao/autenticacao.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
