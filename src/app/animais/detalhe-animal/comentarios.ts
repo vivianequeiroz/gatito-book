@@ -1,7 +1,7 @@
-export interface Comentarios {
+export interface Comentario {
   date: Date;
   text: string;
   userName: string;
 }
 
-export type Comentario = Array<Comentarios>;
+export type Comentarios = Array<Comentario>;

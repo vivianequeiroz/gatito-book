@@ -1,8 +1,8 @@
-<div *ngIf="comentarios | async as comentarios">
+<div *ngIf="comentarios$ | async as comentarios">
   <ul class="list-unstyled">
-    <li *ngFor="comentario; of: comentarios"></li>
+    <li *ngFor="comentario of comentarios"></li>
     <p class="text-dark font-weight-bold mr-1">{{ comentario.userName }}</p>
-    <em>{{comentario.date | "date: dd-MM-yyyy HH:mm"}}</em>
+    <em>{{comentario.date | date:"dd-MM-yyyy HH:mm"}}</em>
     <p class="break-word mb-2">{{ comentario.text }}</p>
   </ul>
 
@@ -17,13 +17,13 @@
           >
             Publicar
           </button>
-          <app-mensagem
-            mensagem="Tamanho máximo de 300 caracteres"
-            *ngIf="!!comentarioForm.get('comentario')?.errors?.maxlength"
-          >
-          </app-mensagem>
         </div>
       </div>
+      <app-mensagem
+        mensagem="Tamanho máximo de 300 caracteres"
+        *ngIf="!!comentarioForm.get('comentario')?.errors?.maxLength"
+      >
+      </app-mensagem>
     </form>
   </div>
 </div>

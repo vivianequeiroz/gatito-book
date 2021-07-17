@@ -17,7 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AnimalComponent,
     GradeFotosAnimaisComponent,
     DetalheAnimalComponent,
-    ComentariosComponent,
+    ComentariosComponent
   ],
   imports: [
     CommonModule,
