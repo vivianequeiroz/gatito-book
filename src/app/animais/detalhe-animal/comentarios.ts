@@ -4,4 +4,4 @@ export interface Comentarios {
   userName: string;
 }
 
-export type Comentarios = Array<Comentario>;
+export type Comentario = Array<Comentarios>;
