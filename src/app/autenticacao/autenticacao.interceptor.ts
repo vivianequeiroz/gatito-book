@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
   HttpHeaders,
-} from "@angular/common/http";
-import { Observable } from "rxjs";
-import { TokenService } from "./token.service";
+} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { TokenService } from './token.service';
 
 @Injectable()
 export class AutenticacaoInterceptor implements HttpInterceptor {
@@ -19,12 +19,10 @@ export class AutenticacaoInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     if (this.tokenService.possuiToken()) {
       const token = this.tokenService.retornaToken();
-      const headers = new HttpHeaders().append("x-access-token", token);
+      const headers = new HttpHeaders().append('x-access-token', token);
       request = request.clone({ headers });
     }
-    //continues the request
+
     return next.handle(request);
   }
 }
-
-// interceptor must have independent order of execution because the order it will be called can not be guaranteed
